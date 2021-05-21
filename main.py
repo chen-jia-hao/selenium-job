@@ -14,13 +14,14 @@ if __name__ == '__main__':
     print(web.title)
     print(web.current_url)
     kw = web.find_element_by_xpath('//*[@id="kw"]')
-    kw.send_keys('python')
+    key = 'python'
+    kw.send_keys(key)
     kw.submit()
-    print(web.page_source)
+    # print(web.page_source)
     first_x = '//*[@id="content_left"]/div/div/h3/a'
 
     # wWait(web, 10, 0.2).until(ec.presence_of_element_located((By.XPATH, first_x)))
-    time.sleep(10)
+    wWait(web, 20, 0.5).until(ec.title_contains(key))
     first = web.find_element_by_xpath(first_x)
     print(first.text)
     web.quit()

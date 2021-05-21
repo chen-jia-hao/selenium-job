@@ -16,7 +16,7 @@ if __name__ == '__main__':
     kw = web.find_element_by_xpath('//*[@id="kw"]')
     kw.send_keys('python')
     kw.submit()
-
+    print(web.title)
     first_x = '//*[@id="content_left"]/div/div/h3/a'
 
     # wWait(web, 10, 0.2).until(ec.presence_of_element_located((By.XPATH, first_x)))

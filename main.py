@@ -17,12 +17,9 @@ if __name__ == '__main__':
     key = 'python'
     kw.send_keys(key)
     kw.submit()
-    # print(web.page_source)
-    # first_x = '//*[@id="content_left"]/div/div/h3/a'
     first_x = '//*[@id="container"]/div[2]/div/div[2]/span'
 
-    # wWait(web, 10, 0.2).until(ec.presence_of_element_located((By.XPATH, first_x)))
-    wWait(web, 20, 0.5).until(ec.title_contains(key))
+    wWait(web, 10, 0.2).until(ec.title_contains(key))
     first = web.find_element_by_xpath(first_x)
     print(first.text)
     web.quit()

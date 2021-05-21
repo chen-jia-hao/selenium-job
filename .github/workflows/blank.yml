@@ -33,7 +33,7 @@ jobs:
           chromium-browser --version
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R a+x /usr/bin/chromedriver
-          chromedriver -V
+          chromedriver --version
       - name: 'Set up Python'
         uses: actions/setup-python@v1
         with:

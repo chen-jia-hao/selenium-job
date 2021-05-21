@@ -7,4 +7,5 @@ if __name__ == '__main__':
     web = Chrome(options=opts)
     web.get('https://www.baidu.com')
     print(web.title)
+    print(web.current_url)
     web.quit()

@@ -26,12 +26,14 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: add path env and print info
         run: |
-          echo Add other actions to build,
           pwd
           ls -l
           chromium-browser --version
+          sudo cp -p ./chrome/chromedriver /usr/bin/
+          chmod -R a+x /usr/bin/chromedriver
+          chromedriver -V
       - name: 'Set up Python'
         uses: actions/setup-python@v1
         with:
@@ -39,7 +41,5 @@ jobs:
       - name: 'Install requirements'
         run: pip install -r ./requirements.txt
       - name: 'Working'
-        run: |
-          sudo cp -p ./chrome/chromedriver /usr/bin/
-          chmod -R a+x /usr/bin/chromedriver
+        run:
           python main.py

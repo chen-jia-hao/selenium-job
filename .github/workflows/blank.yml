@@ -30,7 +30,7 @@ jobs:
         run: |
           echo Add other actions to build,
           pwd
-          ll
+          ls -l
           chromium-browser --version
       - name: 'Set up Python'
         uses: actions/setup-python@v1
